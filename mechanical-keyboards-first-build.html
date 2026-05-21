@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your First Mechanical Keyboard: A No-Nonsense Guide — Solvra</title>
+  <meta name="description" content="Switches, keycaps, form factors, and hotswap — what each one means and which decisions actually matter when building your first mechanical keyboard."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#fff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--mono-bg:#1e293b;--ac:#0d9488}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:17px;line-height:1.7}
+    header{background:var(--mono-bg);border-bottom:3px solid var(--ac);padding:0 clamp(1rem,4vw,4rem);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .br{color:var(--teal-l)}
+    nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.45)}
+    .post-hero{background:var(--mono-bg);border-bottom:4px solid var(--ac);padding:clamp(3.5rem,9vw,7rem) clamp(1rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+    .breadcrumb{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+    .breadcrumb a{color:rgba(255,255,255,0.3);text-decoration:none}
+    .tag-chip{display:inline-flex;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;background:var(--ac);color:#fff;margin-bottom:1rem;width:fit-content}
+    .post-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.2rem;max-width:860px}
+    .post-byline{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.35);display:flex;gap:1rem}
+    .post-byline .author{color:var(--teal-l)}
+    .post-layout{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 270px;gap:4rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}}
+    article p{margin-bottom:1.4rem;color:#334155;line-height:1.85}
+    article h2{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin:3rem 0 1rem;color:var(--ink);border-left:3px solid var(--ac);padding-left:0.75rem;line-height:1.3}
+    article h3{font-family:'Space Mono',monospace;font-size:0.9rem;font-weight:700;margin:2rem 0 0.75rem;color:var(--ink)}
+    article ul,article ol{margin:1rem 0 1.5rem 1.5rem}
+    article li{margin-bottom:0.6rem;color:#334155}
+    article strong{color:var(--ink);font-weight:600}
+    .pullquote{background:var(--ac);color:#fff;padding:1.6rem 2rem;margin:2.5rem 0;border-radius:3px}
+    .pullquote p{font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:700;line-height:1.5;letter-spacing:-0.01em;margin:0}
+    .callout{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ac);padding:1.3rem 1.5rem;margin:2rem 0}
+    .callout-tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ac);margin-bottom:0.4rem}
+    .callout p{margin:0;font-size:0.92rem;color:var(--mid);font-style:italic}
+    .switch-table{width:100%;border-collapse:collapse;border:1px solid var(--border);margin:2rem 0;font-size:0.88rem}
+    .switch-table th{background:var(--mono-bg);color:var(--white);font-family:'Space Mono',monospace;font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.7rem 1rem;text-align:left}
+    .switch-table td{padding:0.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle;color:#334155}
+    .switch-table tr:last-child td{border-bottom:none}
+    .switch-table tr:hover td{background:var(--teal-bg)}
+    .sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+    .sb-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--ac);padding:0.6rem 1rem}
+    .toc-list,.also-list{list-style:none;padding:0}
+    .toc-list li,.also-list li{border-bottom:1px solid var(--border)}
+    .toc-list li:last-child,.also-list li:last-child{border-bottom:none}
+    .toc-list a{display:block;padding:0.55rem 1rem;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;letter-spacing:-0.01em;color:var(--mid);text-decoration:none}
+    .toc-list a:hover{color:var(--ac);background:var(--teal-bg)}
+    .also-list a{display:flex;flex-direction:column;gap:0.1rem;padding:0.8rem 1rem;text-decoration:none;transition:background 0.15s}
+    .also-list a:hover{background:var(--teal-bg)}
+    .also-list .ac-l{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+    .also-list .at{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
+    .also-list a:hover .at{color:var(--ac)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:4rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .br{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <nav><a href="index.html">← All Guides</a></nav>
+</header>
+<div class="post-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Mechanical Keyboards</div>
+  <div class="tag-chip">Mechanical Keyboards</div>
+  <h1 class="post-title">Your First Mechanical Keyboard: A No-Nonsense Guide to Getting Started Without Wasting Money</h1>
+  <div class="post-byline"><span class="author">Marco Lindqvist</span><span>·</span><span>10 May 2026</span><span>·</span><span>12 min read</span></div>
+</div>
+<div class="post-layout">
+  <article>
+    <p>The mechanical keyboard hobby has a well-earned reputation for consuming money. Spend fifteen minutes reading any forum about it and you'll encounter $200 keyboards described as "entry-level," cables that cost more than some people's entire workstations, and a vocabulary — switches, stabilisers, gasket mount, WKL layout — that makes it sound like you need an engineering degree before you're allowed to type on something nice.</p>
+    <p>You don't. Most of what makes a mechanical keyboard genuinely good is achievable on a modest budget, and most of what the hobby spends its time discussing is either personal preference or diminishing returns beyond a certain point. This guide is an attempt to give you what you actually need to make a good first decision without getting pulled into a hobby rabbit hole before you've even typed on a switch.</p>
+
+    <div class="pullquote"><p>// The single most important variable in a mechanical keyboard is the switch. Everything else is preference optimisation around that core choice.</p></div>
+
+    <h2 id="why-mechanical">Why Mechanical at All?</h2>
+    <p>The case for mechanical keyboards over membrane keyboards (the kind that come with most computers) has two main components. First, actuation feel: mechanical switches have a defined, consistent actuation point, which means every keystroke feels the same every time, and you can learn to type more accurately and with less effort once your fingers are trained to the actuation. Second, longevity: quality mechanical switches are rated for 50–100 million keystrokes, compared to 5–10 million for typical membrane keyboards. A good mechanical keyboard genuinely lasts years.</p>
+    <p>The third reason people give — sound — is real but variable. Some mechanical switches are satisfying to type on. Some are loud enough to be banned from offices and meetings. Others are quieter than membrane keyboards. The sound is a consequence of the switch type you choose, not an inherent property of mechanical keyboards in general.</p>
+
+    <h2 id="switches">Switches: The Only Decision That Really Matters First</h2>
+    <p>Mechanical switches come in three fundamental types, and understanding the difference determines everything about how the keyboard feels and sounds:</p>
+
+    <table class="switch-table">
+      <thead>
+        <tr><th>Type</th><th>Feel</th><th>Sound</th><th>Best For</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Linear</strong> (e.g. Cherry Red)</td><td>Smooth, no bump</td><td>Quiet to moderate</td><td>Gaming, fast typists</td></tr>
+        <tr><td><strong>Tactile</strong> (e.g. Cherry Brown)</td><td>Bump at actuation point</td><td>Moderate</td><td>Office, everyday typing</td></tr>
+        <tr><td><strong>Clicky</strong> (e.g. Cherry Blue)</td><td>Bump + click</td><td>Loud</td><td>Home use, those who like feedback</td></tr>
+      </tbody>
+    </table>
+
+    <p>Cherry switches are the industry benchmark, but there are dozens of alternatives from manufacturers like Gateron and Kailh that are widely considered equal or better at lower prices. For a first keyboard, any reputable Cherry or Gateron linear or tactile switch is a fine choice. Avoid clicky switches unless you have a private office and no video calls.</p>
+
+    <div class="callout">
+      <div class="callout-tag">Before You Buy</div>
+      <p>If possible, try a switch tester — a small board with one of each switch type — before committing to a keyboard. Many office supply and electronics shops stock them. The difference between switch types is easier to feel than to describe, and £10 on a tester can save you from buying the wrong thing.</p>
+    </div>
+
+    <h2 id="form-factor">Form Factor: How Much Keyboard Do You Need?</h2>
+    <p>Mechanical keyboards come in multiple sizes, described by the percentage of a full 104-key layout they retain:</p>
+    <ul>
+      <li><strong>Full size (100%)</strong> — includes numpad, function row, navigation cluster. Most space, most features.</li>
+      <li><strong>Tenkeyless (TKL / 80%)</strong> — removes numpad. Better desk ergonomics for most people. The most popular size.</li>
+      <li><strong>75%</strong> — compact, keeps function row and arrows. Good balance of size and functionality.</li>
+      <li><strong>65%</strong> — removes function row, keeps arrows. Very popular in the hobby.</li>
+      <li><strong>60%</strong> — removes everything except the alphanumeric and modifier keys. Most compact, requires learning layers for function keys.</li>
+    </ul>
+    <p>For a first keyboard, TKL or 75% is the pragmatic recommendation. Small enough to improve desk ergonomics versus a full-size keyboard, large enough that you don't have to relearn where everything is.</p>
+
+    <h2 id="hotswap">Hotswap: The Feature Worth Paying For</h2>
+    <p>Hotswap sockets allow you to remove and replace switches without soldering. This means you can change your switches later if you decide you want something different — which you probably will, because the first switch you choose might not turn out to be your favourite once you've spent more time with the hobby.</p>
+    <p>A hotswap keyboard costs slightly more than an equivalent non-hotswap model. It's worth it for a first board because it gives you flexibility. Non-hotswap keyboards require desoldering to change switches, which is a skill most people don't have and a process that can damage a keyboard if done incorrectly.</p>
+
+    <h2 id="budget">What to Actually Spend</h2>
+    <p>A first mechanical keyboard does not need to cost more than £80–120. In this price range, you can get a hotswap TKL or 75% board with quality switches and a reasonable keycap set. The Keychron V series and the Epomaker range are commonly recommended entry points. Both offer hotswap, QMK/VIA compatibility for remapping keys, and build quality that punches well above the price point.</p>
+    <p>The expensive end of the market — $200+ keyboards, group-buy-only boards, custom builds — exists and is genuinely interesting once you know what you prefer. But it's optimisation territory, not starting territory. Type on a good mid-range board for six months, understand what you like and what you'd change, and then make an informed decision about whether to spend more.</p>
+  </article>
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-hd">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#why-mechanical">Why mechanical at all?</a></li>
+        <li><a href="#switches">Switches — the core decision</a></li>
+        <li><a href="#form-factor">Form factor</a></li>
+        <li><a href="#hotswap">Hotswap — worth it</a></li>
+        <li><a href="#budget">What to actually spend</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-hd">Also on Solvra</div>
+      <ul class="also-list">
+        <li><a href="running-for-beginners-over-30.html"><span class="ac-l">Running</span><span class="at">Starting running after 30</span></a></li>
+        <li><a href="campervan-conversion-real-costs.html"><span class="ac-l">Van Life</span><span class="at">Campervan conversion costs</span></a></li>
+        <li><a href="home-espresso-what-it-takes.html"><span class="ac-l">Espresso</span><span class="at">Home espresso guide</span></a></li>
+        <li><a href="courier-software-bristol-same-day.html"><span class="ac-l">Business</span><span class="at">Courier tech guide</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solvra — Practical Guides for Curious People</title>
+  <meta name="description" content="Solvra publishes practical, honest guides on mechanical keyboards, running, van conversions, home espresso, courier software, and small business IT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#ffffff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--red:#e11d48;--amber:#d97706;--purple:#7c3aed;--green:#059669;--mono-bg:#1e293b}
+    html{scroll-behavior:smooth}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:16px;line-height:1.6}
+    .site-header{background:var(--mono-bg);border-bottom:3px solid var(--teal)}
+    .header-top{padding:0 clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .bracket{color:var(--teal-l)}
+    .header-nav{display:flex}
+    .header-nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;letter-spacing:0.02em;text-decoration:none;color:rgba(255,255,255,0.5);padding:0 1.1rem;height:58px;display:flex;align-items:center;border-right:1px solid rgba(255,255,255,0.07);transition:color 0.15s,background 0.15s}
+    .header-nav a:first-child{border-left:1px solid rgba(255,255,255,0.07)}
+    .header-nav a:hover{color:var(--white);background:rgba(255,255,255,0.05)}
+    .cat-bar{background:var(--ink);padding:0 clamp(1rem,4vw,4rem);display:flex;overflow-x:auto}
+    .cat-bar a{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.4);padding:0.6rem 1.2rem;border-right:1px solid rgba(255,255,255,0.06);white-space:nowrap;transition:color 0.15s,background 0.15s;display:flex;align-items:center;gap:0.4rem}
+    .cat-bar a:hover{color:var(--teal-l);background:rgba(13,148,136,0.1)}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
+    .dot.red{background:var(--red)}.dot.amber{background:var(--amber)}.dot.purple{background:var(--purple)}.dot.green{background:var(--green)}
+    .hero-feature{background:var(--white);border-bottom:1px solid var(--border)}
+    .hero-inner{max-width:1280px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 380px;gap:3rem}
+    .hero-main{display:flex;flex-direction:column;gap:1rem}
+    .tag-chip{display:inline-flex;align-items:center;gap:0.4rem;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;width:fit-content}
+    .chip-teal{background:var(--teal-bg);color:var(--teal);border:1px solid #99f6e4}
+    .chip-red{background:#fff1f2;color:var(--red);border:1px solid #fecdd3}
+    .chip-amber{background:#fffbeb;color:var(--amber);border:1px solid #fde68a}
+    .chip-purple{background:#f5f3ff;color:var(--purple);border:1px solid #ddd6fe}
+    .chip-green{background:#ecfdf5;color:var(--green);border:1px solid #a7f3d0}
+    .hero-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;letter-spacing:-0.03em;color:var(--ink)}
+    .hero-title a{text-decoration:none;color:inherit;transition:color 0.15s}
+    .hero-title a:hover{color:var(--teal)}
+    .hero-excerpt{font-size:1rem;color:var(--mid);line-height:1.75;font-weight:300;font-style:italic;max-width:600px}
+    .hero-meta{font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--mid);letter-spacing:0.02em;display:flex;gap:0.75rem;align-items:center}
+    .hero-meta .author{color:var(--teal);font-weight:700}
+    .hero-meta .sep{color:var(--border)}
+    .hero-read{display:inline-flex;align-items:center;gap:0.4rem;font-family:'Space Mono',monospace;font-size:0.7rem;font-weight:700;text-decoration:none;color:var(--white);background:var(--teal);padding:0.55rem 1.2rem;border-radius:3px;width:fit-content;transition:background 0.15s}
+    .hero-read:hover{background:var(--teal-l)}
+    .hero-read::after{content:' →'}
+    .hero-side{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white)}
+    .side-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);background:var(--off);padding:0.6rem 1rem;border-bottom:1px solid var(--border)}
+    .side-link{display:flex;gap:0.75rem;padding:1rem;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;align-items:flex-start;transition:background 0.15s}
+    .side-link:last-child{border-bottom:none}
+    .side-link:hover{background:var(--teal-bg)}
+    .side-num{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--border);flex-shrink:0;padding-top:2px;min-width:2rem}
+    .side-content{display:flex;flex-direction:column;gap:0.3rem}
+    .side-title{font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;line-height:1.35;letter-spacing:-0.01em;color:var(--ink)}
+    .side-link:hover .side-title{color:var(--teal)}
+    .side-meta{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mid)}
+    .main-wrap{max-width:1280px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    .section-label{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem;padding-bottom:0.6rem;border-bottom:2px solid var(--teal);display:flex;align-items:center;justify-content:space-between}
+    .article-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .art-card{background:var(--white);padding:1.5rem 1.8rem;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;text-decoration:none;color:inherit;transition:background 0.15s;align-items:start}
+    .art-card:hover{background:var(--teal-bg)}
+    .art-index{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--border);line-height:1;padding-top:4px;min-width:2.5rem}
+    .art-body{display:flex;flex-direction:column;gap:0.5rem}
+    .art-title{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;line-height:1.35;letter-spacing:-0.02em;color:var(--ink)}
+    .art-card:hover .art-title{color:var(--teal)}
+    .art-excerpt{font-size:0.88rem;color:var(--mid);line-height:1.7;font-style:italic;font-weight:300}
+    .art-foot{display:flex;gap:0.75rem;align-items:center;margin-top:0.25rem}
+    .art-meta{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--mid)}
+    .art-meta .author{color:var(--teal);font-weight:700}
+    .art-read{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;color:var(--teal);letter-spacing:0.04em}
+    .art-read::after{content:' →'}
+    .sidebar{display:flex;flex-direction:column;gap:1.5rem}
+    .sb-widget{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--teal);padding:0.6rem 1rem}
+    .sb-links{list-style:none;padding:0}
+    .sb-links li{border-bottom:1px solid var(--border)}
+    .sb-links li:last-child{border-bottom:none}
+    .sb-links a{display:flex;flex-direction:column;gap:0.15rem;padding:0.85rem 1rem;text-decoration:none;transition:background 0.15s}
+    .sb-links a:hover{background:var(--teal-bg)}
+    .sb-links .sl-cat{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid)}
+    .sb-links .sl-title{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
+    .sb-links a:hover .sl-title{color:var(--teal)}
+    .sb-about{padding:1rem;font-size:0.88rem;color:var(--mid);line-height:1.7;font-style:italic;border-top:1px solid var(--border)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:3rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .bracket{color:var(--teal-l)}
+    .footer-nav{display:flex;gap:2rem;flex-wrap:wrap}
+    .footer-nav a{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.35);letter-spacing:0.04em;text-transform:uppercase;transition:color 0.15s}
+    .footer-nav a:hover{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-side{display:none}.main-wrap{grid-template-columns:1fr}.art-card{grid-template-columns:1fr}.art-index{display:none}.header-nav{display:none}}
+    @keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .hero-title{animation:fadeSlide 0.5s ease both}
+    .hero-excerpt{animation:fadeSlide 0.5s 0.1s ease both}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <a href="index.html" class="logo"><span class="bracket">[</span>Solvra<span class="bracket">]</span></a>
+    <nav class="header-nav">
+      <a href="#keyboards">Keyboards</a>
+      <a href="#running">Running</a>
+      <a href="#vanlife">Van Life</a>
+      <a href="#espresso">Espresso</a>
+      <a href="#business">Business</a>
+    </nav>
+  </div>
+  <div class="cat-bar">
+    <a href="#keyboards"><span class="dot"></span>Mechanical Keyboards</a>
+    <a href="#running"><span class="dot red"></span>Running</a>
+    <a href="#vanlife"><span class="dot amber"></span>Van Life</a>
+    <a href="#espresso"><span class="dot purple"></span>Espresso</a>
+    <a href="#business"><span class="dot green"></span>Business Tech</a>
+  </div>
+</header>
+
+<section class="hero-feature" id="keyboards">
+  <div class="hero-inner">
+    <div class="hero-main">
+      <span class="tag-chip chip-teal">Mechanical Keyboards · Featured Guide</span>
+      <h1 class="hero-title"><a href="mechanical-keyboards-first-build.html">Your First Mechanical Keyboard: A No-Nonsense Guide to Getting Started Without Wasting Money</a></h1>
+      <p class="hero-excerpt">The mechanical keyboard hobby has a reputation for complexity and expense that is only partially deserved. Most of what you need to know fits in one article — and most of what you'll be told to buy, you don't need yet.</p>
+      <div class="hero-meta"><span class="author">Marco Lindqvist</span><span class="sep">·</span><span>10 May 2026</span><span class="sep">·</span><span>12 min read</span></div>
+      <a href="mechanical-keyboards-first-build.html" class="hero-read">Read the Guide</a>
+    </div>
+    <div class="hero-side">
+      <div class="side-hd">Also on Solvra</div>
+      <a href="running-for-beginners-over-30.html" class="side-link" id="running">
+        <span class="side-num">02</span>
+        <div class="side-content">
+          <span class="tag-chip chip-red" style="font-size:0.55rem;padding:0.15rem 0.5rem;">Running</span>
+          <div class="side-title">Starting Running After 30: What the Apps Don't Tell You</div>
+          <div class="side-meta">Anya Kowalski · 7 May 2026</div>
+        </div>
+      </a>
+      <a href="campervan-conversion-real-costs.html" class="side-link" id="vanlife">
+        <span class="side-num">03</span>
+        <div class="side-content">
+          <span class="tag-chip chip-amber" style="font-size:0.55rem;padding:0.15rem 0.5rem;">Van Life</span>
+          <div class="side-title">Campervan Conversion: The Real Costs Nobody Puts in Their YouTube Video</div>
+          <div class="side-meta">Dev Osei · 3 May 2026</div>
+        </div>
+      </a>
+      <a href="home-espresso-what-it-takes.html" class="side-link" id="espresso">
+        <span class="side-num">04</span>
+        <div class="side-content">
+          <span class="tag-chip chip-purple" style="font-size:0.55rem;padding:0.15rem 0.5rem;">Espresso</span>
+          <div class="side-title">Home Espresso: What It Actually Takes to Pull a Good Shot</div>
+          <div class="side-meta">Rosa Elliot · 29 Apr 2026</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="main-wrap">
+  <main>
+    <div class="section-label"><span>All Guides</span><span style="font-size:0.55rem;">2026</span></div>
+    <div class="article-list">
+      <a href="mechanical-keyboards-first-build.html" class="art-card">
+        <div class="art-index">01</div>
+        <div class="art-body">
+          <span class="tag-chip chip-teal">Mechanical Keyboards</span>
+          <div class="art-title">Your First Mechanical Keyboard: A No-Nonsense Guide</div>
+          <p class="art-excerpt">Switches, keycaps, form factors, and hotswap — what each one means and which decisions actually matter for a first build.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Marco Lindqvist</span> · 10 May 2026 · 12 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+      <a href="running-for-beginners-over-30.html" class="art-card">
+        <div class="art-index">02</div>
+        <div class="art-body">
+          <span class="tag-chip chip-red">Running</span>
+          <div class="art-title">Starting Running After 30: What the Apps Don't Tell You</div>
+          <p class="art-excerpt">Training plans, injury prevention, and what your body does differently when you start running as an adult.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Anya Kowalski</span> · 7 May 2026 · 10 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+      <a href="campervan-conversion-real-costs.html" class="art-card">
+        <div class="art-index">03</div>
+        <div class="art-body">
+          <span class="tag-chip chip-amber">Van Life</span>
+          <div class="art-title">Campervan Conversion: The Real Costs Nobody Puts in Their YouTube Video</div>
+          <p class="art-excerpt">The van costs less than you think. The conversion costs more. An honest breakdown from someone who's done it.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Dev Osei</span> · 3 May 2026 · 11 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+      <a href="home-espresso-what-it-takes.html" class="art-card">
+        <div class="art-index">04</div>
+        <div class="art-body">
+          <span class="tag-chip chip-purple">Espresso</span>
+          <div class="art-title">Home Espresso: What It Actually Takes to Pull a Good Shot</div>
+          <p class="art-excerpt">The machine is only part of it. Grind quality, water temperature, dose, and technique — what each variable does.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Rosa Elliot</span> · 29 Apr 2026 · 9 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+      <a href="courier-software-bristol-same-day.html" class="art-card" id="business">
+        <div class="art-index">05</div>
+        <div class="art-body">
+          <span class="tag-chip chip-green">Courier Business</span>
+          <div class="art-title">How Independent Courier Businesses Are Closing the Tech Gap With Large Carriers</div>
+          <p class="art-excerpt">The software platforms giving small fleets enterprise-level dispatch, tracking, and customer communication — at SMB prices.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Jake Thornton</span> · 24 Apr 2026 · 9 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+      <a href="small-business-website-it-guide.html" class="art-card">
+        <div class="art-index">06</div>
+        <div class="art-body">
+          <span class="tag-chip chip-teal">Business IT &amp; Web</span>
+          <div class="art-title">What Small Businesses Actually Need from IT and Their Website</div>
+          <p class="art-excerpt">From managed IT support to website maintenance — the technology decisions that protect your business versus the ones that drain budget.</p>
+          <div class="art-foot"><div class="art-meta"><span class="author">Priya Sharma</span> · 20 Apr 2026 · 8 min</div><span class="art-read">Read</span></div>
+        </div>
+      </a>
+    </div>
+  </main>
+  <aside class="sidebar">
+    <div class="sb-widget">
+      <div class="sb-hd">Quick Links</div>
+      <ul class="sb-links">
+        <li><a href="mechanical-keyboards-first-build.html"><span class="sl-cat">Mechanical Keyboards</span><span class="sl-title">First mechanical keyboard guide</span></a></li>
+        <li><a href="running-for-beginners-over-30.html"><span class="sl-cat">Running</span><span class="sl-title">Running after 30</span></a></li>
+        <li><a href="campervan-conversion-real-costs.html"><span class="sl-cat">Van Life</span><span class="sl-title">Campervan conversion costs</span></a></li>
+        <li><a href="home-espresso-what-it-takes.html"><span class="sl-cat">Espresso</span><span class="sl-title">Home espresso guide</span></a></li>
+        <li><a href="courier-software-bristol-same-day.html"><span class="sl-cat">Courier</span><span class="sl-title">Courier tech guide</span></a></li>
+        <li><a href="small-business-website-it-guide.html"><span class="sl-cat">Business IT</span><span class="sl-title">Small business IT &amp; web</span></a></li>
+      </ul>
+    </div>
+    <div class="sb-widget">
+      <div class="sb-hd">About Solvra</div>
+      <div class="sb-about">Solvra publishes practical, honest guides on the things people actually want to know — from hobbies and gear to running a small business. No sponsored posts, no filler.</div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo"><span class="bracket">[</span>Solvra<span class="bracket">]</span></a>
+  <nav class="footer-nav"><a href="#keyboards">Keyboards</a><a href="#running">Running</a><a href="#vanlife">Van Life</a><a href="#espresso">Espresso</a><a href="#business">Business</a></nav>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>

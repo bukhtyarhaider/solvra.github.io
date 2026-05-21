@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starting Running After 30: What the Apps Don't Tell You — Solvra</title>
+  <meta name="description" content="Training plans, injury prevention, and what your body does differently when you start running as an adult. An honest guide for beginners over 30."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#fff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--mono-bg:#1e293b;--ac:#e11d48}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:17px;line-height:1.7}
+    header{background:var(--mono-bg);border-bottom:3px solid var(--ac);padding:0 clamp(1rem,4vw,4rem);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .br{color:var(--teal-l)}
+    nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.45)}
+    .post-hero{background:var(--mono-bg);border-bottom:4px solid var(--ac);padding:clamp(3.5rem,9vw,7rem) clamp(1rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+    .breadcrumb{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+    .breadcrumb a{color:rgba(255,255,255,0.3);text-decoration:none}
+    .tag-chip{display:inline-flex;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;background:var(--ac);color:#fff;margin-bottom:1rem;width:fit-content}
+    .post-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.2rem;max-width:860px}
+    .post-byline{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;color:rgba(255,255,255,0.35);display:flex;gap:1rem}
+    .post-byline .author{color:var(--teal-l)}
+    .post-layout{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 270px;gap:4rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}}
+    article p{margin-bottom:1.4rem;color:#334155;line-height:1.85}
+    article h2{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin:3rem 0 1rem;color:var(--ink);border-left:3px solid var(--ac);padding-left:0.75rem;line-height:1.3}
+    article ul,article ol{margin:1rem 0 1.5rem 1.5rem}
+    article li{margin-bottom:0.6rem;color:#334155}
+    article strong{color:var(--ink);font-weight:600}
+    .pullquote{background:var(--ac);color:#fff;padding:1.6rem 2rem;margin:2.5rem 0;border-radius:3px}
+    .pullquote p{font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:700;line-height:1.5;letter-spacing:-0.01em;margin:0}
+    .callout{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ac);padding:1.3rem 1.5rem;margin:2rem 0}
+    .callout-tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ac);margin-bottom:0.4rem}
+    .callout p{margin:0;font-size:0.92rem;color:var(--mid);font-style:italic}
+    .sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+    .sb-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--ac);padding:0.6rem 1rem}
+    .toc-list,.also-list{list-style:none;padding:0}
+    .toc-list li,.also-list li{border-bottom:1px solid var(--border)}
+    .toc-list li:last-child,.also-list li:last-child{border-bottom:none}
+    .toc-list a{display:block;padding:0.55rem 1rem;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;color:var(--mid);text-decoration:none}
+    .toc-list a:hover{color:var(--ac);background:var(--teal-bg)}
+    .also-list a{display:flex;flex-direction:column;gap:0.1rem;padding:0.8rem 1rem;text-decoration:none;transition:background 0.15s}
+    .also-list a:hover{background:var(--teal-bg)}
+    .also-list .ac-l{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+    .also-list .at{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3}
+    .also-list a:hover .at{color:var(--ac)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:4rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .br{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <nav><a href="index.html">← All Guides</a></nav>
+</header>
+<div class="post-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Running</div>
+  <div class="tag-chip">Running for Beginners</div>
+  <h1 class="post-title">Starting Running After 30: What the Apps Don't Tell You</h1>
+  <div class="post-byline"><span class="author">Anya Kowalski</span><span>·</span><span>7 May 2026</span><span>·</span><span>10 min read</span></div>
+</div>
+<div class="post-layout">
+  <article>
+    <p>I ran a 5K in October last year, nine months after I started running from nothing. I was 34, had never considered myself a runner, and had specifically told people for most of my adult life that running was not something I was built for. That last part was wrong in an interesting way: the capacity to run was always there. What I hadn't had was an accurate understanding of how to start without immediately injuring myself or hating every second of it. The apps I tried initially were not much help on either front.</p>
+    <p>The Couch to 5K programme — the original C25K, not any particular app — is genuinely good. The walk/run interval structure it uses is well-designed and evidence-based. The problem is that it assumes a level of baseline physical readiness that beginners over 30 often don't have, and it doesn't tell you anything about the injury risks that are specific to adult-onset running or how to manage them. This guide covers both.</p>
+
+    <div class="pullquote"><p>// Most running injuries in beginners are caused by doing too much too soon. The solution is boring and it works: slow down and do less.</p></div>
+
+    <h2 id="the-body-over-30">What Your Body Does Differently After 30</h2>
+    <p>Running is a high-impact activity that loads your joints, tendons, and connective tissue in ways that require adaptation over time. The adaptation happens — it happens at every age — but it happens more slowly in your 30s and 40s than it does at 18, and the failure to account for this is the primary reason adult beginners get injured.</p>
+    <p>The specific tissues at risk are tendons (particularly the Achilles and the patellar tendon at the knee) and the plantar fascia. These structures respond to training load but lag behind cardiovascular fitness development by several weeks. This creates a dangerous window in the early weeks of a training programme: your cardiovascular system has adapted enough that running feels easier and more enjoyable, but your tendons haven't yet caught up. This is the point at which people increase their mileage too quickly and end up with injuries that set them back months.</p>
+    <p>The simplest way to avoid this is to follow the 10% rule: don't increase your weekly mileage by more than 10% per week. If you ran 10 miles last week, cap this week at 11. This feels frustratingly conservative when you're feeling good. It is significantly less frustrating than plantar fasciitis.</p>
+
+    <h2 id="starting-point">Your Actual Starting Point</h2>
+    <p>Most running apps assume you can run continuously for at least a few minutes without stopping. Many adult beginners, particularly those who have been sedentary for several years, cannot. This is not a character failing — it's a physiological state that is completely reversible, but that requires an honest starting point.</p>
+    <p>If you cannot run for two minutes without stopping, your programme starts with walking. Not walking/running — just walking, four to five times per week, for 30–45 minutes, for the first two weeks. This builds the base level of aerobic conditioning and physical load tolerance that makes the run/walk intervals of C25K actually achievable. Skipping this step is why many people attempt C25K, fail week one, and conclude that running isn't for them.</p>
+
+    <div class="callout">
+      <div class="callout-tag">The Pace Problem</div>
+      <p>Almost every adult beginner runs too fast. Your easy running pace should feel genuinely easy — a pace at which you could hold a conversation without gasping. If you can't do this, you're running too fast. Slow down until you can. This is not a compromise; it's the pace that produces the aerobic adaptations you need.</p>
+    </div>
+
+    <h2 id="shoes">Shoes: The One Gear Decision That Matters</h2>
+    <p>Running shoes are worth spending money on, but not in the direction most beginners assume. The most expensive shoe is not the best shoe for your foot. The correct shoe is the one that matches your foot shape, your gait, and the surface you're running on.</p>
+    <p>Go to a specialist running shop — not a general sports retailer — and ask for a gait analysis. This is usually free, takes about ten minutes, and involves running briefly on a treadmill while staff observe your foot strike and pronation. They will then recommend shoes in your size that match your mechanics. This process reliably produces better outcomes than buying whatever is on sale or whatever a running influencer recommends. Expect to spend £80–130 on a first pair of running shoes. Replace them after 400–500 miles.</p>
+
+    <h2 id="first-months">What the First Three Months Actually Look Like</h2>
+    <p>Month one is uncomfortable, slow, and often discouraging. You will feel unfit, your calves will be sore, and you will wonder why anyone does this voluntarily. This is normal and it ends. Month two is when the first clear improvements appear — runs feel easier, pace improves, and the idea that you might actually become someone who runs starts to seem credible. Month three is when the habit consolidates and motivation becomes less effortful.</p>
+    <p>The people who get through month one are almost all still running in month six. The investment is front-loaded and the returns are genuine. The most useful thing you can do is remove barriers to consistency: run at the same time each day, lay out your clothes the night before, have a specific route rather than deciding on the day. The decision to run should require as little active choice as possible in the early weeks, because willpower is a depleting resource and the habit isn't yet automatic.</p>
+  </article>
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-hd">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#the-body-over-30">What your body does differently</a></li>
+        <li><a href="#starting-point">Your actual starting point</a></li>
+        <li><a href="#shoes">Shoes — the one gear decision</a></li>
+        <li><a href="#first-months">What month 1–3 looks like</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-hd">Also on Solvra</div>
+      <ul class="also-list">
+        <li><a href="mechanical-keyboards-first-build.html"><span class="ac-l">Keyboards</span><span class="at">First mechanical keyboard guide</span></a></li>
+        <li><a href="campervan-conversion-real-costs.html"><span class="ac-l">Van Life</span><span class="at">Campervan conversion costs</span></a></li>
+        <li><a href="home-espresso-what-it-takes.html"><span class="ac-l">Espresso</span><span class="at">Home espresso guide</span></a></li>
+        <li><a href="small-business-website-it-guide.html"><span class="ac-l">Business IT</span><span class="at">Small business IT guide</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Espresso: What It Actually Takes to Pull a Good Shot — Solvra</title>
+  <meta name="description" content="The machine is only part of it. Grind quality, water temperature, dose, and technique — what each variable does and which ones to fix first."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#fff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--mono-bg:#1e293b;--ac:#7c3aed}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:17px;line-height:1.7}
+    header{background:var(--mono-bg);border-bottom:3px solid var(--ac);padding:0 clamp(1rem,4vw,4rem);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .br{color:var(--teal-l)}
+    nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.45)}
+    .post-hero{background:var(--mono-bg);border-bottom:4px solid var(--ac);padding:clamp(3.5rem,9vw,7rem) clamp(1rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+    .breadcrumb{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+    .breadcrumb a{color:rgba(255,255,255,0.3);text-decoration:none}
+    .tag-chip{display:inline-flex;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;background:var(--ac);color:#fff;margin-bottom:1rem;width:fit-content}
+    .post-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.2rem;max-width:860px}
+    .post-byline{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;color:rgba(255,255,255,0.35);display:flex;gap:1rem}
+    .post-byline .author{color:var(--teal-l)}
+    .post-layout{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 270px;gap:4rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}}
+    article p{margin-bottom:1.4rem;color:#334155;line-height:1.85}
+    article h2{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin:3rem 0 1rem;color:var(--ink);border-left:3px solid var(--ac);padding-left:0.75rem;line-height:1.3}
+    article ul,article ol{margin:1rem 0 1.5rem 1.5rem}
+    article li{margin-bottom:0.6rem;color:#334155}
+    article strong{color:var(--ink);font-weight:600}
+    .pullquote{background:var(--ac);color:#fff;padding:1.6rem 2rem;margin:2.5rem 0;border-radius:3px}
+    .pullquote p{font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:700;line-height:1.5;letter-spacing:-0.01em;margin:0}
+    .callout{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ac);padding:1.3rem 1.5rem;margin:2rem 0}
+    .callout-tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ac);margin-bottom:0.4rem}
+    .callout p{margin:0;font-size:0.92rem;color:var(--mid);font-style:italic}
+    .sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+    .sb-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--ac);padding:0.6rem 1rem}
+    .toc-list,.also-list{list-style:none;padding:0}
+    .toc-list li,.also-list li{border-bottom:1px solid var(--border)}
+    .toc-list li:last-child,.also-list li:last-child{border-bottom:none}
+    .toc-list a{display:block;padding:0.55rem 1rem;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;color:var(--mid);text-decoration:none}
+    .toc-list a:hover{color:var(--ac);background:var(--teal-bg)}
+    .also-list a{display:flex;flex-direction:column;gap:0.1rem;padding:0.8rem 1rem;text-decoration:none;transition:background 0.15s}
+    .also-list a:hover{background:var(--teal-bg)}
+    .also-list .ac-l{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+    .also-list .at{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3}
+    .also-list a:hover .at{color:var(--ac)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:4rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .br{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <nav><a href="index.html">← All Guides</a></nav>
+</header>
+<div class="post-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Home Espresso</div>
+  <div class="tag-chip">Home Espresso</div>
+  <h1 class="post-title">Home Espresso: What It Actually Takes to Pull a Good Shot</h1>
+  <div class="post-byline"><span class="author">Rosa Elliot</span><span>·</span><span>29 Apr 2026</span><span>·</span><span>9 min read</span></div>
+</div>
+<div class="post-layout">
+  <article>
+    <p>The espresso machine is not the most important piece of equipment in home espresso. I know this sounds counterintuitive, and it took me about £400 of wrong purchases to fully understand it. The grinder is the most important piece of equipment. Everything flows from grind quality, and no espresso machine — at any price point — can compensate for inconsistent or incorrectly sized ground coffee.</p>
+    <p>This matters because most people who decide to make espresso at home start by buying a machine. The machine's instruction manual then tells them to use pre-ground coffee or the grinder attachment that came with it, and the results are mediocre, and they conclude that home espresso is just not as good as a café. They are drawing the wrong conclusion. The problem is the grind, not the machine.</p>
+
+    <div class="pullquote"><p>// Grinder first. Machine second. Everything else third. In that order, for that reason.</p></div>
+
+    <h2 id="the-grinder">Why the Grinder Is What Matters</h2>
+    <p>Espresso is extracted by forcing hot water through finely-ground, densely-packed coffee under pressure. The extraction rate — how much of the coffee's soluble compounds end up in the cup — depends on the surface area of the ground coffee, which is determined by grind size. Too coarse, and water flows through too quickly, extracting too little: sour, thin, under-extracted espresso. Too fine, and water can't flow through properly, extracting too much: bitter, harsh, over-extracted espresso.</p>
+    <p>Getting grind size right requires a grinder capable of making precise, repeatable adjustments in small increments. Blade grinders — the spinning-blade type common in kitchen appliances — don't do this; they produce particles of wildly inconsistent sizes. Burr grinders crush coffee between two grinding surfaces and produce consistent particle sizes that can be precisely adjusted. For espresso, you need a burr grinder.</p>
+
+    <div class="callout">
+      <div class="callout-tag">The Budget Rule</div>
+      <p>Spend at least as much on your grinder as on your machine, ideally more. A £200 grinder and a £200 machine will produce better espresso than a £50 grinder and a £350 machine. This is not a controversial opinion among home baristas — it's the consistent finding of anyone who has tested both combinations.</p>
+    </div>
+
+    <h2 id="variables">The Variables That Determine Shot Quality</h2>
+    <p>Once you have a capable grinder and machine, espresso quality is controlled by four variables:</p>
+    <ul>
+      <li><strong>Dose</strong> — the weight of ground coffee in the portafilter, typically 18–20g for a double espresso. Measured on a scale, not estimated by volume.</li>
+      <li><strong>Grind size</strong> — adjusted in small increments until the shot extracts in the correct time window (25–35 seconds for most espresso recipes).</li>
+      <li><strong>Tamp pressure</strong> — the coffee must be compressed evenly and consistently before brewing. A calibrated tamper (30lbs pressure) removes the guesswork.</li>
+      <li><strong>Water temperature</strong> — most espresso brews well at 90–94°C. Machines with PID temperature controllers allow precise adjustment; cheaper machines without PIDs require a temperature surfing technique.</li>
+    </ul>
+    <p>The most useful diagnostic tool for learning espresso is a set of scales. Weigh your dose in, weigh your espresso out, and time the extraction. A target ratio of 1:2 (18g coffee in, 36g espresso out, in 28–32 seconds) is a reliable starting point for most espresso roasts. Adjust grind size if the time is wrong. Adjust dose if the ratio is off at correct extraction time.</p>
+
+    <h2 id="machines">Which Machine to Start With</h2>
+    <p>For a first home espresso machine, the range between £200–400 contains several capable options. The Sage Bambino and the DeLonghi Dedica are both widely recommended, both offer sufficient pressure control and temperature stability for good home espresso, and both pair well with a mid-range burr grinder like the Baratza Encore ESP.</p>
+    <p>The machines that cost more — the Breville Barista Express, the Sage Barista Pro — add convenience features and better build quality. None of them meaningfully change the fundamental requirement that grind quality determines espresso quality. You can pull excellent espresso on a £200 machine with a £200 grinder. You cannot pull excellent espresso on any machine with a blade grinder or an inadequate burr grinder.</p>
+
+    <h2 id="coffee">The Coffee Itself</h2>
+    <p>Fresh coffee — roasted within the last four weeks — makes a significant difference to espresso quality. The CO2 released from recently-roasted beans creates crema and affects extraction dynamics. Stale coffee (supermarket beans that have been sitting on a shelf for months) extracts differently and tastes flatter. Buying from a local roaster or a subscription service that ships freshly-roasted beans is not coffee snobbery; it's a practical input variable that affects the quality of what ends up in your cup.</p>
+  </article>
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-hd">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#the-grinder">Why the grinder matters most</a></li>
+        <li><a href="#variables">The four variables</a></li>
+        <li><a href="#machines">Which machine to start with</a></li>
+        <li><a href="#coffee">The coffee itself</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-hd">Also on Solvra</div>
+      <ul class="also-list">
+        <li><a href="mechanical-keyboards-first-build.html"><span class="ac-l">Keyboards</span><span class="at">First mechanical keyboard guide</span></a></li>
+        <li><a href="running-for-beginners-over-30.html"><span class="ac-l">Running</span><span class="at">Starting running after 30</span></a></li>
+        <li><a href="campervan-conversion-real-costs.html"><span class="ac-l">Van Life</span><span class="at">Campervan conversion costs</span></a></li>
+        <li><a href="small-business-website-it-guide.html"><span class="ac-l">Business IT</span><span class="at">Small business IT &amp; web guide</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>

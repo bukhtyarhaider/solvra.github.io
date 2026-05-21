@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What Small Businesses Actually Need from IT and Their Website — Solvra</title>
+  <meta name="description" content="From managed IT support to website maintenance — the technology decisions that genuinely protect your business versus the ones that drain budget without adding value."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#fff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--mono-bg:#1e293b;--ac:#0d9488}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:17px;line-height:1.7}
+    header{background:var(--mono-bg);border-bottom:3px solid var(--ac);padding:0 clamp(1rem,4vw,4rem);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .br{color:var(--teal-l)}
+    nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.45)}
+    .post-hero{background:var(--mono-bg);border-bottom:4px solid var(--ac);padding:clamp(3.5rem,9vw,7rem) clamp(1rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+    .breadcrumb{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+    .breadcrumb a{color:rgba(255,255,255,0.3);text-decoration:none}
+    .tag-chip{display:inline-flex;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;background:var(--ac);color:#fff;margin-bottom:1rem;width:fit-content}
+    .post-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.2rem;max-width:860px}
+    .post-byline{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;color:rgba(255,255,255,0.35);display:flex;gap:1rem}
+    .post-byline .author{color:var(--teal-l)}
+    .post-layout{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 270px;gap:4rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}}
+    article p{margin-bottom:1.4rem;color:#334155;line-height:1.85}
+    article h2{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin:3rem 0 1rem;color:var(--ink);border-left:3px solid var(--ac);padding-left:0.75rem;line-height:1.3}
+    article ul{margin:1rem 0 1.5rem 1.5rem}
+    article li{margin-bottom:0.6rem;color:#334155}
+    article strong{color:var(--ink);font-weight:600}
+    article a{color:var(--teal);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(13,148,136,0.35);padding-bottom:1px;transition:opacity 0.2s}
+    article a:hover{opacity:0.7}
+    .pullquote{background:var(--ac);color:#fff;padding:1.6rem 2rem;margin:2.5rem 0;border-radius:3px}
+    .pullquote p{font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:700;line-height:1.5;letter-spacing:-0.01em;margin:0}
+    .callout{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ac);padding:1.3rem 1.5rem;margin:2rem 0}
+    .callout-tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ac);margin-bottom:0.4rem}
+    .callout p{margin:0;font-size:0.92rem;color:var(--mid);font-style:italic}
+    .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin:2rem 0;background:var(--border)}
+    .cg-cell{padding:1.1rem 1.3rem;background:var(--white);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .cg-cell:nth-child(2n){border-right:none}
+    .cg-cell:nth-last-child(-n+2){border-bottom:none}
+    .cg-label{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem}
+    .cg-label.must{color:var(--ac)}.cg-label.skip{color:var(--mid)}
+    .cg-cell p{font-size:0.84rem;color:var(--mid);margin:0;font-style:italic;line-height:1.6}
+    .sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+    .sb-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--ac);padding:0.6rem 1rem}
+    .toc-list,.also-list{list-style:none;padding:0}
+    .toc-list li,.also-list li{border-bottom:1px solid var(--border)}
+    .toc-list li:last-child,.also-list li:last-child{border-bottom:none}
+    .toc-list a{display:block;padding:0.55rem 1rem;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;color:var(--mid);text-decoration:none}
+    .toc-list a:hover{color:var(--ac);background:var(--teal-bg)}
+    .also-list a{display:flex;flex-direction:column;gap:0.1rem;padding:0.8rem 1rem;text-decoration:none;transition:background 0.15s}
+    .also-list a:hover{background:var(--teal-bg)}
+    .also-list .ac-l{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+    .also-list .at{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3}
+    .also-list a:hover .at{color:var(--ac)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:4rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .br{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <nav><a href="index.html">← All Guides</a></nav>
+</header>
+<div class="post-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Business IT &amp; Web</div>
+  <div class="tag-chip">Business IT &amp; Web</div>
+  <h1 class="post-title">What Small Businesses Actually Need from IT and Their Website (and What They Don't)</h1>
+  <div class="post-byline"><span class="author">Priya Sharma</span><span>·</span><span>20 Apr 2026</span><span>·</span><span>8 min read</span></div>
+</div>
+<div class="post-layout">
+  <article>
+    <p>Small businesses make two kinds of technology mistakes with impressive consistency. The first is underinvesting in the infrastructure that genuinely matters — backups, security, managed devices — because it's invisible until the day it isn't. The second is overinvesting in features and tools that looked good in a demo but nobody actually uses. Both patterns drain money. Both are common. And both tend to happen because technology decisions get made without a clear framework for separating the things that protect the business from the things that just look impressive.</p>
+
+    <p>The businesses that get this right consistently have one thing in common: they work with a competent IT partner who understands small business needs. <a href="https://ukitservices.co.uk/" rel="dofollow" target="_blank">UK IT Services</a> is one of the providers doing this well — managed monitoring, security, and helpdesk support sized for growing businesses rather than scaled-down enterprise services. Beyond the infrastructure layer, they also cover the web side of the equation: their <a href="https://ukitservices.co.uk/website-maintenance/" rel="dofollow" target="_blank">website maintenance</a> service addresses a gap that many small businesses quietly have — a website that was built a few years ago and hasn't been properly updated, patched, or optimised since, which is a security liability as much as a marketing one. What follows is the practical framework for making better technology decisions across both areas.</p>
+
+    <div class="pullquote"><p>// The most expensive technology decision is the one you didn't make because nothing had gone wrong yet.</p></div>
+
+    <h2 id="it-fundamentals">// IT Fundamentals That Actually Protect You</h2>
+
+    <div class="check-grid">
+      <div class="cg-cell"><div class="cg-label must">// MUST: Tested Backups</div><p>A backup that has never been restored is an assumption. Test recovery quarterly. Keep at least one copy isolated from your live network.</p></div>
+      <div class="cg-cell"><div class="cg-label must">// MUST: MFA on Everything</div><p>Multi-factor authentication on email, cloud storage, and financial systems prevents the majority of credential-based attacks targeting SMBs.</p></div>
+      <div class="cg-cell"><div class="cg-label must">// MUST: Managed Patching</div><p>Software updates applied promptly across all devices. Most successful attacks exploit known vulnerabilities with available patches.</p></div>
+      <div class="cg-cell"><div class="cg-label skip">// SKIP: Software Nobody Uses</div><p>Audit active subscriptions quarterly. Most small businesses pay for 2–4 tools that have been replaced or abandoned. Cancel them.</p></div>
+      <div class="cg-cell"><div class="cg-label must">// MUST: Endpoint Security</div><p>Every device touching business data needs managed protection. Consumer antivirus is inadequate for business use and unmanaged by anyone.</p></div>
+      <div class="cg-cell"><div class="cg-label skip">// SKIP: Multiple Comms Tools</div><p>Slack, Teams, WhatsApp, and email simultaneously fragments communication and creates overhead. Pick one, enforce it consistently.</p></div>
+    </div>
+
+    <h2 id="website-as-infrastructure">Your Website Is Infrastructure, Not Just Marketing</h2>
+    <p>Most small business owners think of their website as a marketing asset — something you build once and update occasionally when a product changes or a staff member leaves. This framing misses something important: your website is also infrastructure. It runs on software (WordPress, a CMS, a hosting environment) that requires security updates, plugin maintenance, and performance monitoring in exactly the same way that other business software does.</p>
+    <p>A WordPress site that hasn't been updated in eighteen months is running outdated plugins with known vulnerabilities. It is a potential entry point into your business network. It may be loading slowly, which affects both search rankings and customer experience. And it may contain broken links or outdated information that undermines the credibility you've built in other channels. None of this is visible to the business owner until it becomes a problem.</p>
+
+    <div class="callout">
+      <div class="callout-tag">// The Security Side of This</div>
+      <p>43% of cyberattacks on UK SMBs involve web application vulnerabilities. An unmaintained website with outdated CMS software or plugins is one of the most accessible attack surfaces in a small business's technology stack — and one of the easiest to close with proper maintenance.</p>
+    </div>
+
+    <h2 id="managed-vs-inhouse">Managed IT vs. In-House: Making the Decision</h2>
+    <p>For businesses under 40 employees, the economics of an in-house IT hire are almost never favourable. A competent generalist costs £35,000–55,000 in salary, has necessarily limited expertise, and is a single point of failure. A managed provider brings a team, tooling, and defined SLAs at significantly lower cost for most businesses in this size range.</p>
+    <p>The right questions to ask any provider: Do they monitor your systems proactively or wait for you to call? Is there a named person who will learn your business over time? What do their contractual SLAs say about response times — and can they show you historical performance against them? Good IT support is not a commodity, and the difference between a provider who anticipates problems and one who responds to them compounds significantly over time.</p>
+
+    <h2 id="prioritisation">How to Prioritise When You Can't Do Everything</h2>
+    <p>If budget or time requires prioritisation, the sequence should be: security fundamentals first (MFA, backups, endpoint protection), then website health (maintenance and security patching), then productivity tooling optimisation. The first category prevents catastrophic outcomes. The second prevents a slower accumulation of vulnerability and performance degradation. The third is optimisation once the foundations are solid.</p>
+    <p>Most small businesses are doing the third before the first, which is the wrong order. Productivity tool decisions are visible and feel impactful. Security and maintenance work is invisible precisely when it's working. That asymmetry is what makes it consistently underprioritised — until the day the backup doesn't exist or the website gets compromised.</p>
+  </article>
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-hd">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#it-fundamentals">IT fundamentals that protect you</a></li>
+        <li><a href="#website-as-infrastructure">Website as infrastructure</a></li>
+        <li><a href="#managed-vs-inhouse">Managed vs in-house</a></li>
+        <li><a href="#prioritisation">How to prioritise</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-hd">Also on Solvra</div>
+      <ul class="also-list">
+        <li><a href="mechanical-keyboards-first-build.html"><span class="ac-l">Keyboards</span><span class="at">First mechanical keyboard guide</span></a></li>
+        <li><a href="running-for-beginners-over-30.html"><span class="ac-l">Running</span><span class="at">Starting running after 30</span></a></li>
+        <li><a href="campervan-conversion-real-costs.html"><span class="ac-l">Van Life</span><span class="at">Campervan conversion costs</span></a></li>
+        <li><a href="courier-software-bristol-same-day.html"><span class="ac-l">Courier</span><span class="at">Courier tech guide</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>

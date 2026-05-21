@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campervan Conversion: The Real Costs Nobody Puts in Their YouTube Video — Solvra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--teal:#0d9488;--teal-l:#14b8a6;--teal-bg:#f0fdfa;--white:#fff;--off:#f8f9fa;--border:#e2e8f0;--mid:#64748b;--ink:#0f172a;--text:#1e293b;--mono-bg:#1e293b;--ac:#d97706}
+    body{font-family:'IBM Plex Serif',Georgia,serif;background:var(--off);color:var(--text);font-size:17px;line-height:1.7}
+    header{background:var(--mono-bg);border-bottom:3px solid var(--ac);padding:0 clamp(1rem,4vw,4rem);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:58px}
+    .logo{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .logo .br{color:var(--teal-l)}
+    nav a{font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.45)}
+    .post-hero{background:var(--mono-bg);border-bottom:4px solid var(--ac);padding:clamp(3.5rem,9vw,7rem) clamp(1rem,4vw,4rem) clamp(2.5rem,5vw,4rem)}
+    .breadcrumb{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-bottom:1.5rem}
+    .breadcrumb a{color:rgba(255,255,255,0.3);text-decoration:none}
+    .tag-chip{display:inline-flex;font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:3px;background:var(--ac);color:#fff;margin-bottom:1rem;width:fit-content}
+    .post-title{font-family:'Space Mono',monospace;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.2rem;max-width:860px}
+    .post-byline{font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;color:rgba(255,255,255,0.35);display:flex;gap:1rem}
+    .post-byline .author{color:var(--teal-l)}
+    .post-layout{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,5vw,4.5rem) clamp(1rem,4vw,4rem);display:grid;grid-template-columns:1fr 270px;gap:4rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}}
+    article p{margin-bottom:1.4rem;color:#334155;line-height:1.85}
+    article h2{font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin:3rem 0 1rem;color:var(--ink);border-left:3px solid var(--ac);padding-left:0.75rem;line-height:1.3}
+    article ul,article ol{margin:1rem 0 1.5rem 1.5rem}
+    article li{margin-bottom:0.6rem;color:#334155}
+    article strong{color:var(--ink);font-weight:600}
+    .pullquote{background:var(--ac);color:#fff;padding:1.6rem 2rem;margin:2.5rem 0;border-radius:3px}
+    .pullquote p{font-family:'Space Mono',monospace;font-size:0.95rem;font-weight:700;line-height:1.5;letter-spacing:-0.01em;margin:0}
+    .callout{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ac);padding:1.3rem 1.5rem;margin:2rem 0}
+    .callout-tag{font-family:'Space Mono',monospace;font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ac);margin-bottom:0.4rem}
+    .callout p{margin:0;font-size:0.92rem;color:var(--mid);font-style:italic}
+    .cost-table{width:100%;border-collapse:collapse;border:1px solid var(--border);margin:2rem 0;font-size:0.88rem}
+    .cost-table th{background:var(--mono-bg);color:var(--white);font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.7rem 1rem;text-align:left}
+    .cost-table td{padding:0.7rem 1rem;border-bottom:1px solid var(--border);color:#334155}
+    .cost-table tr:last-child td{border-bottom:none}
+    .cost-table .total td{font-family:'Space Mono',monospace;font-weight:700;color:var(--ink);border-top:2px solid var(--ac)}
+    .sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+    .sb-box{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .sb-hd{font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:var(--ac);padding:0.6rem 1rem}
+    .toc-list,.also-list{list-style:none;padding:0}
+    .toc-list li,.also-list li{border-bottom:1px solid var(--border)}
+    .toc-list li:last-child,.also-list li:last-child{border-bottom:none}
+    .toc-list a{display:block;padding:0.55rem 1rem;font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;color:var(--mid);text-decoration:none}
+    .toc-list a:hover{color:var(--ac);background:var(--teal-bg)}
+    .also-list a{display:flex;flex-direction:column;gap:0.1rem;padding:0.8rem 1rem;text-decoration:none;transition:background 0.15s}
+    .also-list a:hover{background:var(--teal-bg)}
+    .also-list .ac-l{font-family:'Space Mono',monospace;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+    .also-list .at{font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;color:var(--ink);line-height:1.3}
+    .also-list a:hover .at{color:var(--ac)}
+    footer{background:var(--mono-bg);border-top:3px solid var(--teal);padding:2.5rem clamp(1rem,4vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-top:4rem}
+    .footer-logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;text-decoration:none;color:var(--white);letter-spacing:-0.03em}
+    .footer-logo .br{color:var(--teal-l)}
+    .footer-note{font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(255,255,255,0.2)}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <nav><a href="index.html">← All Guides</a></nav>
+</header>
+<div class="post-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Van Life</div>
+  <div class="tag-chip">Van Life &amp; Conversion</div>
+  <h1 class="post-title">Campervan Conversion: The Real Costs Nobody Puts in Their YouTube Video</h1>
+  <div class="post-byline"><span class="author">Dev Osei</span><span>·</span><span>3 May 2026</span><span>·</span><span>11 min read</span></div>
+</div>
+<div class="post-layout">
+  <article>
+    <p>YouTube campervan content has a particular relationship with money. The builds look immaculate — tongue-and-groove pine, custom cabinetry, integrated solar, an Alde heating system — and the total cost is often mentioned at the end, usually in a tone of slightly surprised pride: "And we did the whole thing for just £8,000!" What these videos almost never include is the van purchase price, the tools bought specifically for the project, the wasted materials from mistakes, or the professional help called in when something turned out to require more skill than anticipated.</p>
+    <p>I converted a 2018 Ford Transit L3H2 over the course of seven months. The van cost £14,500. The conversion cost £9,200. The actual total was £23,700, which is not a figure I've seen in the title of many YouTube videos, but which I think is a more honest representation of what a quality conversion costs in Britain in 2026.</p>
+
+    <div class="pullquote"><p>// The van is not the expensive part. The conversion is. And the conversion always costs more than the spreadsheet you built before you started.</p></div>
+
+    <h2 id="van-purchase">Choosing and Buying the Van</h2>
+    <p>The most popular conversion bases in the UK are the Ford Transit, Mercedes Sprinter, and Volkswagen Crafter. All three have strong conversion communities, good parts availability, and a range of sizes to suit different build ambitions. The L3H2 specification (long wheelbase, high roof) is the conversion standard for anyone who wants to stand up inside.</p>
+    <p>The key variables when buying: mileage, service history, rust (check the wheel arches, floor, and roof rails carefully), and whether it has the ULEZ-compliant engine specification for anyone planning to use it in London. A 2016–2020 vehicle in the 80,000–120,000 mile range with a full service history is a better starting point than a lower-mileage van with gaps in the paperwork. Campervans get used hard. Maintenance history matters more than age.</p>
+
+    <h2 id="real-costs">What the Conversion Actually Costs</h2>
+    <table class="cost-table">
+      <thead><tr><th>Category</th><th>Budget estimate</th><th>My actual cost</th></tr></thead>
+      <tbody>
+        <tr><td>Insulation (Celotex, Thinsulate, acoustic)</td><td>£400–600</td><td>£520</td></tr>
+        <tr><td>Flooring (ply subfloor + vinyl)</td><td>£200–400</td><td>£360</td></tr>
+        <tr><td>Wall cladding (pine T&amp;G or ply panels)</td><td>£300–500</td><td>£480</td></tr>
+        <tr><td>Furniture build (materials, hardware)</td><td>£800–1,500</td><td>£1,340</td></tr>
+        <tr><td>Bed platform and mattress</td><td>£300–600</td><td>£580</td></tr>
+        <tr><td>Electrical (solar, leisure battery, wiring)</td><td>£800–1,500</td><td>£1,620</td></tr>
+        <tr><td>Heating (diesel heater)</td><td>£600–1,000</td><td>£820</td></tr>
+        <tr><td>Kitchen (hob, sink, water pump, tank)</td><td>£500–900</td><td>£760</td></tr>
+        <tr><td>Windows and roof vent</td><td>£400–700</td><td>£680</td></tr>
+        <tr><td>Tools purchased for build</td><td>Often omitted</td><td>£640</td></tr>
+        <tr><td>Mistakes and wasted materials</td><td>Often omitted</td><td>£400</td></tr>
+        <tr><td>Professional help (electrical sign-off)</td><td>Often omitted</td><td>£200</td></tr>
+        <tr class="total"><td>Total conversion cost</td><td>£4,300–7,700</td><td>£9,200</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="what-takes-longest">What Takes Longer Than Expected</h2>
+    <p>Insulation and preparation — the work before any visible progress appears — typically takes twice as long as people budget for. Getting insulation properly installed in the awkward curves, ribs, and voids of a van body is genuinely time-consuming, and cutting corners here creates condensation problems later that are expensive to fix.</p>
+    <p>The electrical system is the other time-sink. A proper 12V leisure electrical system with solar charging, a battery management system, a leisure battery, and 240V inverter requires careful planning to size correctly and careful installation to be safe. Most self-builds have the electrical system signed off by a qualified electrician before driving the van, which is worth factoring into both time and cost.</p>
+
+    <div class="callout">
+      <div class="callout-tag">The Skills Audit</div>
+      <p>Be honest about what you can do competently before you start. Carpentry, basic electrics, and general DIY are learnable; welding structural repairs, gas installation, and complex wiring are not. Hiring a professional for the parts you can't do safely costs less than fixing a dangerous installation later.</p>
+    </div>
+
+    <h2 id="worth-it">Was It Worth It?</h2>
+    <p>For the use case it was designed for — extended travel, working remotely, weekends away without booking accommodation — the van has paid for itself in ways that don't show up in a spreadsheet. The ability to leave on a Friday evening and sleep somewhere interesting without a hotel booking has changed how I spend weekends in a way that's been genuinely significant.</p>
+    <p>Whether it's worth it financially depends entirely on how much you use it. A van that gets used forty weekends a year and three longer trips is easy to justify. One that sits on the drive most of the time is expensive storage. Be honest about your actual usage pattern before you start, rather than the idealised one.</p>
+  </article>
+  <aside class="sidebar">
+    <div class="sb-box">
+      <div class="sb-hd">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#van-purchase">Choosing and buying the van</a></li>
+        <li><a href="#real-costs">What the conversion costs</a></li>
+        <li><a href="#what-takes-longest">What takes longest</a></li>
+        <li><a href="#worth-it">Was it worth it?</a></li>
+      </ul>
+    </div>
+    <div class="sb-box">
+      <div class="sb-hd">Also on Solvra</div>
+      <ul class="also-list">
+        <li><a href="mechanical-keyboards-first-build.html"><span class="ac-l">Keyboards</span><span class="at">First mechanical keyboard guide</span></a></li>
+        <li><a href="running-for-beginners-over-30.html"><span class="ac-l">Running</span><span class="at">Starting running after 30</span></a></li>
+        <li><a href="home-espresso-what-it-takes.html"><span class="ac-l">Espresso</span><span class="at">Home espresso guide</span></a></li>
+        <li><a href="courier-software-bristol-same-day.html"><span class="ac-l">Business</span><span class="at">Courier tech guide</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo"><span class="br">[</span>Solvra<span class="br">]</span></a>
+  <p class="footer-note">© 2026 Solvra. All rights reserved.</p>
+</footer>
+</body>
+</html>
